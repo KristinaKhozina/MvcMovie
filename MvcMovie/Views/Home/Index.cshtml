@@ -1,0 +1,28 @@
+﻿@using MvcMovie.Data
+
+@{
+    ViewData["Title"] = "Movie";
+}
+
+@*<div class="text-center">
+    <h1 class="display-4">Hello moto movie</h1>
+</div>*@
+
+<form asp-controller="Home" asp-action="SearchByTitle" method="get" class="d-lg-flex m-auto p-3" style="max-width:500px">
+    <div class="input-group">
+        <input id="title" name="query" class="form-control rounded me-2" placeholder="Movie title">
+        <button type="submit" class="btn btn-dark rounded">Search</button>
+    </div>
+</form>
+
+<form asp-controller="Home" asp-action="SearchByGenre" method="get" class="card spec-new border-0">
+    <div class="card-body p-3 d-flex flex-wrap justify-content-center">
+
+        @foreach (var genre in Enum.GetValues(typeof(GenreEnum)))
+        {
+            <button type="submit" name="genre" value=@genre class="btn btn-outline-dark mb-2 me-2">
+                @genre
+            </button>
+        }
+    </div>
+</form>

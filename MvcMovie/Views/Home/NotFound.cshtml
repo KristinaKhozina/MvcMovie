@@ -1,0 +1,19 @@
+﻿@using MvcMovie.Data
+@model SearchResultsViewModel
+@{
+    ViewData["Title"] = "Search";
+    Layout = "_Layout";
+}
+
+<div class="d-flex justify-content-between">
+    <h1 class="display-4">Search "@Model.Query"</h1>
+
+    <form asp-controller="Home" asp-action="SearchByTitle" method="get" class="d-flex p-3" style="max-width:500px">
+        <div class="input-group">
+            <input id="title" name="query" class="form-control rounded me-2" placeholder="Movie title">
+            <button type="submit" class="btn btn-dark rounded">Search</button>
+        </div>
+    </form>
+</div>
+
+<h3 class="text-center display-6">No search results were found for "@Model.Query" :(</h3>
