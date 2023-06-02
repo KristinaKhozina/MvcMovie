@@ -1,1 +1,1 @@
-# MvcMovie
+The Movie Search Application is built using ASP.NET Core, following the MVC architectural pattern. It utilizes the TMDb API (The Movie Database) to fetch movie data and display search results to users.
